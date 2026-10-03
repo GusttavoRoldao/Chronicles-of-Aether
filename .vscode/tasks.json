@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Debug Build",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/build",
+            },
+            "command": "./win_build_debug.bat",
+            "problemMatcher": "$gcc"
+        }
+    ]
+}
