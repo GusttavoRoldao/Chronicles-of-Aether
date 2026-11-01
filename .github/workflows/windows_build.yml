@@ -13,7 +13,7 @@ jobs:
                     msystem: UCRT64
                     update: true
                     install: mingw-w64-ucrt-x86_64-gcc
-                    
+
             - name: checkout repository
               uses: actions/checkout@v6
 
@@ -22,3 +22,15 @@ jobs:
                 cd build   
                 ./win_build.bat
                 ./win_build_debug.bat
+
+            - name: upload build 
+              uses: actions/upload-artifact@v4
+              with:
+                name: build project
+                path: bin/aether.exe
+
+            - name: upload build 
+              uses: actions/upload-artifact@v4
+              with:
+                name: build project
+                path: bin/aetherDEBUG.exe
