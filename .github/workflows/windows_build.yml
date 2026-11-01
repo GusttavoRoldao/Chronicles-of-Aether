@@ -26,11 +26,11 @@ jobs:
             - name: upload build 
               uses: actions/upload-artifact@v4
               with:
-                name: build project
+                name: Aether-${{github.run_number}}
                 path: bin/aether.exe
 
             - name: upload build 
               uses: actions/upload-artifact@v4
               with:
-                name: build project
+                name: AetherDEBUG-${{github.run_number}}
                 path: bin/aetherDEBUG.exe
