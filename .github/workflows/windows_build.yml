@@ -1,0 +1,24 @@
+on: 
+    push:
+        branches: [main]
+    workflow_dispatch: 
+jobs:
+    build:
+        runs-on: windows-latest
+
+        steps: 
+            - name: install gcc
+              uses: msys2/setup-msys2@v2
+              with:
+                    msystem: UCRT64
+                    update: true
+                    install: mingw-w64-ucrt-x86_64-gcc
+                    
+            - name: checkout repository
+              uses: actions/checkout@v6
+
+            - name: build project
+              run: |
+                cd build   
+                ./win_build.bat
+                ./win_build_debug.bat
