@@ -32,7 +32,8 @@ typedef enum {
     ITEM_HELMET,
     ITEM_ARMOR,
     ITEM_POTION_HP,
-    ITEM_POTION_MANA
+    ITEM_POTION_MANA,
+    ITEM_TYPE_COUNT
 } ItemType;
 
 typedef enum {

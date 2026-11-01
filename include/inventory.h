@@ -4,8 +4,13 @@
 #include <stdbool.h>
 #include "types.h"
 
+typedef struct InventoryNode {
+    ItemID id;
+    struct InventoryNode* next;
+} InventoryNode;
+
 typedef struct {
-    ItemID items[INVENTORY_MAX];
+    InventoryNode* head;
     int itemCount;
 } Inventory;
 
@@ -15,5 +20,6 @@ bool Inventory_removeItem(Inventory* inventory, int index);
 ItemID Inventory_getItem(const Inventory* inventory, int index);
 bool Inventory_isFull(const Inventory* inventory);
 bool Inventory_isEmpty(const Inventory* inventory);
+void Inventory_destroy(Inventory* inventory);
 
 #endif
